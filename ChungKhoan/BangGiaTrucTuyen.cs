@@ -61,7 +61,7 @@ namespace ChungKhoan
                 Program.conn.Open();
             }
 
-            SqlCommand cmd = new SqlCommand("select MACP as [Mã CP], GIADAT as [GIÁ 2],SOLUONG as [KL2],GIADAT as [GIÁ 1], SOLUONG as [KL1], GIAKHOP AS [Giá khớp], SOLUONGKHOP AS [KL khớp] from dbo.LENHDAT,  DBO.LENHKHOP where dbo.LENHDAT.ID = dbo.LENHKHOP.IDLENHDAT", Program.conn);
+            SqlCommand cmd = new SqlCommand("select MACP as [Mã CP], MUA_GIA2 as [GIÁ 2], MUA_KL2 as [KL2], MUA_GIA1 as [GIÁ 1], MUA_KL1 as [KL1], GIAKHOP AS [Giá khớp], KLKHOP AS [KL khớp], BAN_GIA1 AS [Giá 1], BAN_KL1 AS [KL1], BAN_GIA2 AS [Giá 2], BAN_KL2 AS [KL2] FROM dbo.BangGiaTrucTuyen", Program.conn);
             cmd.Notification = null;
 
             SqlDependency de = new SqlDependency(cmd);
