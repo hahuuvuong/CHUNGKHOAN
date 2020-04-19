@@ -70,5 +70,10 @@ namespace ChungKhoan
             MessageBox.Show("Đặt lệnh thành công " , "Thông báo");
             MessageBox.Show("Số lượng khớp: " + result, "Notification", MessageBoxButtons.OK);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

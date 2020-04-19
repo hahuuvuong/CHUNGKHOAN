@@ -8,7 +8,7 @@ namespace ChungKhoan
 {
     public partial class BangGiaTrucTuyen : Form
     {
-        public string m_connect = "Data Source=Quang-PC;Initial Catalog=CHUNGKHOAN;Persist Security Info=True;User ID=sa;Password=123456";
+        public string m_connect = "Data Source=VUONG;Initial Catalog=CHUNGKHOAN;Persist Security Info=True;User ID=sa;Password=123456";
         SqlConnection con = null;
         public delegate void NewHome();
         public event NewHome OnNewHome;
@@ -79,6 +79,12 @@ namespace ChungKhoan
             {
                 OnNewHome();
             }
+        }
+
+        private void btnGIAODICH_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
         }
     }
 }
