@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGIAODICH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 247);
             this.dataGridView1.TabIndex = 0;
             // 
+            this.btnGIAODICH.Location = new System.Drawing.Point(305, 318);
+            this.btnGIAODICH.Name = "btnGIAODICH";
+            this.btnGIAODICH.Size = new System.Drawing.Size(104, 23);
+            this.btnGIAODICH.TabIndex = 1;
+            this.btnGIAODICH.Text = "Giao dịch";
+            this.btnGIAODICH.UseVisualStyleBackColor = true;
+            this.btnGIAODICH.Click += new System.EventHandler(this.btnGIAODICH_Click);
             // Column1
             // 
             this.Column1.Frozen = true;
@@ -76,5 +84,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btnGIAODICH;
+
     }
 }
