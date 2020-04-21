@@ -58,10 +58,11 @@ namespace ChungKhoan
             sqlCommand.Parameters.AddWithValue("@giadatMB", txtGIADAT.Value);
             SqlDataReader dataReader = null;
             try
-            {   if (Program.conn.State == ConnectionState.Closed)
             {
-                Program.conn.Open();
-            }
+                if (Program.conn.State == ConnectionState.Closed)
+                {
+                    Program.conn.Open();
+                }
                 dataReader = sqlCommand.ExecuteReader();
             }
             catch (Exception ex)
