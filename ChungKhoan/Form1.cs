@@ -44,6 +44,10 @@ namespace ChungKhoan
             string query = "DECLARE	@result int " +
                       "EXEC @result = SP_KHOPLENH_LO @macp, @ngay, @LoaiGD, @soluongMB, @giadatMB " +
                       "SELECT 'result' = @result";
+            if (Program.conn.State == ConnectionState.Closed)
+            {
+                Program.conn.Open();
+            }
             SqlCommand sqlCommand = new SqlCommand(query, Program.conn);
             //MessageBox.Show(cmbMaCP.SelectedValue.ToString(), "Notification", MessageBoxButtons.OK);
 
@@ -54,7 +58,10 @@ namespace ChungKhoan
             sqlCommand.Parameters.AddWithValue("@giadatMB", txtGIADAT.Value);
             SqlDataReader dataReader = null;
             try
+            {   if (Program.conn.State == ConnectionState.Closed)
             {
+                Program.conn.Open();
+            }
                 dataReader = sqlCommand.ExecuteReader();
             }
             catch (Exception ex)
