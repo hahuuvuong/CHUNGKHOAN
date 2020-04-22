@@ -8,7 +8,7 @@ namespace ChungKhoan
 {
     public partial class BangGiaTrucTuyen : Form
     {
-        public string m_connect = "Data Source=VUONG;Initial Catalog=CHUNGKHOAN;Persist Security Info=True;User ID=sa;Password=123456";
+        public string m_connect = "Data Source=QUANG-PC;Initial Catalog=CHUNGKHOAN;Persist Security Info=True;User ID=sa;Password=123456";
         SqlConnection con = null;
         public delegate void NewHome();
         public event NewHome OnNewHome;

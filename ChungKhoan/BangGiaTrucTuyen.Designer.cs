@@ -41,16 +41,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(1181, 254);
             this.dataGridView1.TabIndex = 0;
             // 
-            this.btnGIAODICH.Location = new System.Drawing.Point(305, 318);
-            this.btnGIAODICH.Name = "btnGIAODICH";
-            this.btnGIAODICH.Size = new System.Drawing.Size(104, 23);
-            this.btnGIAODICH.TabIndex = 1;
-            this.btnGIAODICH.Text = "Giao dịch";
-            this.btnGIAODICH.UseVisualStyleBackColor = true;
-            this.btnGIAODICH.Click += new System.EventHandler(this.btnGIAODICH_Click);
             // Column1
             // 
             this.Column1.Frozen = true;
@@ -64,11 +57,21 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // btnGIAODICH
+            // 
+            this.btnGIAODICH.Location = new System.Drawing.Point(557, 315);
+            this.btnGIAODICH.Name = "btnGIAODICH";
+            this.btnGIAODICH.Size = new System.Drawing.Size(104, 23);
+            this.btnGIAODICH.TabIndex = 1;
+            this.btnGIAODICH.Text = "Giao dịch";
+            this.btnGIAODICH.UseVisualStyleBackColor = true;
+            this.btnGIAODICH.Click += new System.EventHandler(this.btnGIAODICH_Click);
+            // 
             // BangGiaTrucTuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 366);
+            this.ClientSize = new System.Drawing.Size(1205, 367);
             this.Controls.Add(this.btnGIAODICH);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BangGiaTrucTuyen";
