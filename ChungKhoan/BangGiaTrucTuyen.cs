@@ -29,6 +29,11 @@ namespace ChungKhoan
             SqlDependency.Stop(m_connect);
             SqlDependency.Start(m_connect);
             Program.conn = new SqlConnection(m_connect);
+            string strLenh = "EXEC SP_BangGiaTrucTuyen";
+
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Close();
         }
 
         private void BangGiaTrucTuyen_Load(object sender, EventArgs e)

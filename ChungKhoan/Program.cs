@@ -18,6 +18,7 @@ namespace ChungKhoan
         /// 
         public static SqlCommand sqlcmd;
         public static SqlConnection conn = new SqlConnection();
+        public static SqlDataReader myReader;
         [STAThread]
         static void Main()
         {
