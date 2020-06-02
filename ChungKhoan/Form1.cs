@@ -15,7 +15,7 @@ namespace ChungKhoan
         public Form1()
         {
             InitializeComponent();
-            Program.conn.ConnectionString = "Data Source=VUONG;Initial Catalog=CHUNGKHOAN;User ID=sa;Password=123456;";
+            Program.conn.ConnectionString = "Data Source=Quang-PC;Initial Catalog=CHUNGKHOAN;User ID=sa;Password=123456;";
             Program.conn.Open();
         }
 

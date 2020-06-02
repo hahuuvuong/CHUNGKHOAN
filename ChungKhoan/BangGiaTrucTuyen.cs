@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ChungKhoan
@@ -38,10 +39,101 @@ namespace ChungKhoan
 
         private void BangGiaTrucTuyen_Load(object sender, EventArgs e)
         {
+            
+
             OnNewHome += new NewHome(Form1_OnNewHome);
             //tab
             //load data vao datagrid
             LoadData();
+            dataGridView1.ColumnHeadersHeight = dataGridView1.ColumnHeadersHeight * 2;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Paint += new PaintEventHandler(dataGridView1_Paint);
+            dataGridView1.Scroll += new ScrollEventHandler(dataGridView1_Scroll);
+            dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
+        }
+
+        void dataGridView1_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            Rectangle rtHeader = dataGridView1.DisplayRectangle;
+            rtHeader.Height = dataGridView1.ColumnHeadersHeight / 2;
+            dataGridView1.Invalidate(rtHeader);
+        }
+        void dataGridView1_Scroll(object sender, ScrollEventArgs e)
+        {
+            Rectangle rtHeader = dataGridView1.DisplayRectangle;
+            rtHeader.Height = dataGridView1.ColumnHeadersHeight / 2;
+            dataGridView1.Invalidate(rtHeader);
+
+        }
+        void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+            string[] texts = { "Lệnh mua", "Khớp lệnh", "Lệnh bán"};
+            for (int j = 1; j < 4;)
+            {
+
+                ////////////////////////////////////////////
+                Rectangle r1 = dataGridView1.GetCellDisplayRectangle(j, -1, true);
+                int w2 = dataGridView1.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w2 - 2;
+                r1.Height = r1.Height / 2 - 2;
+                e.Graphics.FillRectangle(new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
+
+                StringFormat format = new StringFormat();
+
+                format.Alignment = StringAlignment.Center;
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(texts[0], dataGridView1.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor), r1, format);
+                j += 2;
+
+
+            }
+            for (int j = 5; j < 6;)
+            {
+
+                ////////////////////////////////////////////
+                Rectangle r1 = dataGridView1.GetCellDisplayRectangle(j, -1, true);
+                int w2 = dataGridView1.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w2 - 2;
+                r1.Height = r1.Height / 2 - 2;
+                e.Graphics.FillRectangle(new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
+
+                StringFormat format = new StringFormat();
+
+                format.Alignment = StringAlignment.Center;
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(texts[1], dataGridView1.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor), r1, format);
+                j += 2;
+
+
+            }
+            for (int j = 7; j < 11;)
+            {
+
+                ////////////////////////////////////////////
+                Rectangle r1 = dataGridView1.GetCellDisplayRectangle(j, -1, true);
+                int w2 = dataGridView1.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w2 - 2;
+                r1.Height = r1.Height / 2 - 2;
+                e.Graphics.FillRectangle(new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
+
+                StringFormat format = new StringFormat();
+
+                format.Alignment = StringAlignment.Center;
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(texts[2], dataGridView1.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor), r1, format);
+                j += 2;
+
+
+            }
         }
 
         public void Form1_OnNewHome()
